@@ -1,0 +1,143 @@
+<templateSet group="Contao">
+  <template name="{{" value="{{iflng$OPT$}}$END$" description="Translate Insert Tag" toReformat="false" toShortenFQNames="true">
+    <variable name="OPT" expression="" defaultValue="&quot;::en&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="trans" value="&lt;?= $this-&gt;trans('$KEY$', [], '$DOMAIN$') ?&gt;" description="Symfony translator" toReformat="false" toShortenFQNames="true">
+    <variable name="KEY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DOMAIN" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="mob" value="Environment::get('agent')-&gt;mobile" description="Check for mobile UA" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="tr" value="&lt;trans-unit id=&quot;$id$&quot;&gt;&#10;  &lt;target&gt;$END$&lt;/target&gt;&#10;&lt;/trans-unit&gt;" description="Add translation unit" toReformat="false" toShortenFQNames="true">
+    <variable name="id" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="scr" value="&lt;?php $GLOBALS['TL_$BODY$'][] = \Contao\Template::generateScriptTag('$END$', false, null); ?&gt;" description="Add &lt;script&gt; tag" toReformat="true" toShortenFQNames="true">
+    <variable name="BODY" expression="" defaultValue="&quot;BODY&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="ass" value="$this-&gt;asset('$path$', '$app$')" description="Generate asset url" toReformat="false" toShortenFQNames="true">
+    <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="app" expression="" defaultValue="&quot;app&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="gf" value="$GLOBALS['TL_DCA']['tl_$table$']['fields']['$field$'] = [&#10;  'inputType' =&gt; '$text$',&#10;  'search' =&gt; true,&#10;  'exclude' =&gt; true,&#10;  'eval' =&gt; ['tl_class' =&gt; 'w50 clr'],&#10;  'sql' =&gt; &quot;varchar(255) NOT NULL default ''&quot;&#10;];$END$" description="DCA field definition (override)" toReformat="false" toShortenFQNames="true">
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+    </context>
+  </template>
+  <template name="gm" value="$GLOBALS['$GROUP$']['$category$']$END$" description="Contao BE_MOD or FE_MOD" toReformat="false" toShortenFQNames="true">
+    <variable name="GROUP" expression="enum(&quot;FE_MOD&quot;,&quot;BE_MOD&quot;)" defaultValue="&quot;FE_MOD&quot;" alwaysStopAt="true" />
+    <variable name="category" expression="enum(&quot;navigationMenu&quot;,&quot;user&quot;,&quot;application&quot;,&quot;miscellaneous&quot;)" defaultValue="&quot;miscellaneous&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+    </context>
+  </template>
+  <template name="dumpt" value="&lt;?php $this-&gt;dumpTemplateVars(); ?&gt;" description="$this-&gt;dumpTemplateVars()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="dump" value="&lt;?php dump($END$); ?&gt;" description="dump() in a template" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="field" value="'$field$' =&gt; [&#10;  'inputType' =&gt; '$inputType$',&#10;  'search' =&gt; true,&#10;  'exclude' =&gt; true,&#10;  'filter' =&gt; true,&#10;  'eval' =&gt; ['tl_class' =&gt; 'w50'],&#10;  'sql' =&gt; &quot;varchar(255) NOT NULL default ''&quot;&#10;]," description="DCA field definition" toReformat="true" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="inputType" expression="enum(&quot;text&quot;,&quot;select&quot;,&quot;textarea&quot;,&quot;radio&quot;,&quot;picker&quot;,&quot;fileTree&quot;,&quot;checkbox&quot;)" defaultValue="&quot;text&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="route" value="&lt;?= $this-&gt;route('$END$') ?&gt;" description="route in a template" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="extend" value="&lt;?php $this-&gt;extend('$PARENT$'); ?&gt;" description="&lt;?php $this-&gt;extend(''); ?&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="PARENT" expression="enum(&quot;block_searchable&quot;,&quot;block_unsearchable&quot;)" defaultValue="&quot;block_searchable&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="block" value="&lt;?php $this-&gt;block('$BLOCK$'); ?&gt;" description="&lt;?php $this-&gt;block(''); ?&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="BLOCK" expression="enum(&quot;content&quot;,&quot;headline&quot;)" defaultValue="&quot;content&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="endblock" value="&lt;?php $this-&gt;endblock(); ?&gt;" description="&lt;?php $this-&gt;endblock(); ?&gt;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="parent" value="&lt;?= $this-&gt;parent() ?&gt;" description="&lt;?= $this-&gt;parent() ?&gt;" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="VUE_TOP_LEVEL" value="true" />
+    </context>
+  </template>
+  <template name="insert" value="&lt;?php $this-&gt;insert('$image$'); ?&gt;" description="&lt;?php $this-&gt;insert('image'); ?&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="image" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="VUE_TOP_LEVEL" value="true" />
+    </context>
+  </template>
+  <template name="if" value="&lt;?php if ($CONDITION$): ?&gt;&#10;  $END$&#10;&lt;?php endif; ?&gt;" description="&lt;?php if (): ?&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="CONDITION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="VUE_TEMPLATE" value="true" />
+    </context>
+  </template>
+  <template name="gcss" value="$GLOBALS['TL_HEAD'][] = Template::generateStyleTag('$FILENAME$', null, null);" description="Add  style tag" toReformat="true" toShortenFQNames="true">
+    <variable name="FILENAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="gscr" value="$GLOBALS['TL_BODY'][] = Template::generateScriptTag('$FILENAME$', false, null);" description="Add  script tag" toReformat="true" toShortenFQNames="true">
+    <variable name="FILENAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="$G" value="$GLOBALS['$GROUP$']$KEYS$ = $END$;" description="$GLOBALS" toReformat="false" toShortenFQNames="true">
+    <variable name="GROUP" expression="enum(&quot;TL_DCA&quot;,&quot;TL_LANG&quot;,&quot;TL_CSS&quot;,&quot;TL_JAVASCRIPT&quot;,&quot;TL_BODY&quot;,&quot;TL_HEAD&quot;,&quot;FE_MOD&quot;,&quot;BE_MODE&quot;)" defaultValue="TL_DCA" alwaysStopAt="true" />
+    <variable name="KEYS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="tl" value="$ID$" description="Contao identifiers" toReformat="false" toShortenFQNames="true">
+    <variable name="ID" expression="enum(&quot;tl_page&quot;,&quot;tl_article&quot;,&quot;tl_content&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP String Literal" value="true" />
+    </context>
+  </template>
+</templateSet>

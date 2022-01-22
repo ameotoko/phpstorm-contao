@@ -1,0 +1,6 @@
+<templateSet group="Twig">
+  <template name="ext" value="{% extends &quot;$TEMPLATE$&quot; %}&#10;" description="extends &quot;template&quot;" toReformat="true" toShortenFQNames="false">
+    <variable name="TEMPLATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>
